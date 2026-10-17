@@ -1,0 +1,64 @@
+[
+  {
+    "id": 180,
+    "file": "workspace.jpg",
+    "title": "Laptop and notebook",
+    "author": "Galymzhan Abdugalimov",
+    "url": "https://unsplash.com/photos/ICW6QYOcdlg",
+    "license": "Unsplash License"
+  },
+  {
+    "id": 1060,
+    "file": "commerce.jpg",
+    "title": "Coffee preparation",
+    "author": "Karl Fredrickson",
+    "url": "https://unsplash.com/photos/TYIzeCiZ_60",
+    "license": "Unsplash License"
+  },
+  {
+    "id": 0,
+    "file": "studio.jpg",
+    "title": "Laptop workspace",
+    "author": "Alejandro Escamilla",
+    "url": "https://unsplash.com/photos/yC-Yzbqy7PY",
+    "license": "Unsplash License"
+  },
+  {
+    "id": 48,
+    "file": "team.jpg",
+    "title": "Workspace detail",
+    "author": "Luke Chesser",
+    "url": "https://unsplash.com/photos/1uxV8fAfhVM",
+    "license": "Unsplash License"
+  },
+  {
+    "id": 3184292,
+    "file": "advisory.jpg",
+    "title": "People discussing graphs and reports",
+    "author": "fauxels",
+    "url": "https://www.pexels.com/photo/people-discuss-about-graphs-and-rates-3184292/",
+    "provider": "Pexels",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "id": 8296970,
+    "file": "bookkeeping.jpg",
+    "title": "A person examining documents",
+    "author": "Mikhail Nilov",
+    "url": "https://www.pexels.com/photo/a-person-examining-documents-8296970/",
+    "provider": "Pexels",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "id": 8297220,
+    "file": "accounting-detail.jpg",
+    "title": "Working on documents using a calculator",
+    "author": "Mikhail Nilov",
+    "url": "https://www.pexels.com/photo/a-person-working-on-the-documents-using-a-calculator-8297220/",
+    "provider": "Pexels",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  }
+]

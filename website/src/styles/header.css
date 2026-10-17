@@ -1,0 +1,51 @@
+header {
+  background: var(--mint);
+}
+.header-inner {
+  height: 96px;
+  padding: 0 var(--gutter);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  color: var(--deep);
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+nav > a:not(.button) {
+  font-size: 14px;
+  padding: 12px 0;
+}
+nav > a.active:not(.button) {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+nav > a:hover {
+  color: var(--accent);
+}
+nav > .button:hover {
+  color: white;
+}
+nav .button {
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 13px;
+  gap: 20px;
+}
+.menu-toggle {
+  display: none;
+}

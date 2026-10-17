@@ -1,0 +1,26 @@
+.thank-you {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 28px;
+}
+.thank-you p {
+  max-width: 650px;
+}
+.reference {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.legal {
+  max-width: 880px;
+  padding-top: 50px;
+}
+.legal h2 {
+  font-size: 28px;
+  margin: 35px 0 18px;
+}
+.legal p {
+  margin-bottom: 28px;
+}

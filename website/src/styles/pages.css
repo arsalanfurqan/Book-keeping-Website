@@ -1,0 +1,92 @@
+.page-heading,
+.detail-heading {
+  background: var(--mint);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.page-heading h1 {
+  max-width: 1100px;
+}
+.page-heading p {
+  max-width: 580px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+.detail-heading h1 {
+  font-size: clamp(44px, 6.5vw, 92px);
+  margin-top: 34px;
+  max-width: 1100px;
+}
+.tagline {
+  font-family: var(--display);
+  font-size: 32px;
+  letter-spacing: -0.04em;
+  margin-top: 25px;
+}
+.detail-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin-top: 35px;
+}
+.detail-intro p {
+  max-width: 600px;
+}
+.detail-intro .button {
+  flex-shrink: 0;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+.split > div > p {
+  margin-top: 24px;
+  max-width: 520px;
+}
+.split > div > p:first-child {
+  margin-top: 0;
+}
+.split > div > h2 + p {
+  margin-top: 24px;
+}
+.deliverables {
+  margin: 0;
+  justify-content: center;
+  font-size: 19px;
+}
+.preparation,
+.about-copy {
+  background: var(--soft);
+}
+.about-copy > div > p {
+  font-size: 20px;
+}
+.industry-page .industry-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 32px;
+}
+.industry-page img {
+  aspect-ratio: 1.6;
+}
+.industry-page h3 {
+  font-size: 32px;
+}
+.image-note {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 35px;
+}
+.principles > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px 70px;
+  margin-top: 45px;
+}
+.principles h3 {
+  margin-bottom: 16px;
+}
+.principles p {
+  max-width: 480px;
+}

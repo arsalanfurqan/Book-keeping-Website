@@ -1,0 +1,12 @@
+.agents/
+.taste-skill/
+skills-lock.json
+node_modules/
+dist/
+.qa/
+.env
+.env.*
+!.env.example
+website/data/
+website/backups/
+*.log

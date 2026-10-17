@@ -1,0 +1,477 @@
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 730px;
+  }
+  .brand.large {
+    font-size: 220px;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    gap: 22px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+  }
+  .industry-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 24px;
+  }
+  .industry h3 {
+    font-size: 25px;
+  }
+  .contact {
+    gap: 5%;
+  }
+  .contact-form {
+    padding: 26px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .need-result {
+    padding: 30px;
+  }
+  .need-options button {
+    font-size: 22px;
+  }
+  .process {
+    gap: 8%;
+  }
+}
+@media (max-width: 1000px) {
+  .header-inner {
+    height: 82px;
+  }
+  .brand {
+    font-size: 26px;
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  .menu-toggle span {
+    font-size: 24px;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    padding: 20px var(--gutter) 30px;
+    background: var(--mint);
+    z-index: 30;
+    gap: 8px;
+    align-items: stretch;
+  }
+  nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+  nav > a:not(.button) {
+    font-size: 20px;
+    padding: 14px 0;
+  }
+  nav .button {
+    margin-top: 10px;
+  }
+  nav.open {
+    max-height: calc(100dvh - 82px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+@media (max-width: 800px) {
+  .hero {
+    min-height: 650px;
+    max-height: none;
+    padding-top: 45px;
+    gap: 40px;
+  }
+  .hero h1 {
+    font-size: clamp(76px, 12vw, 106px);
+  }
+  .hero-bottom {
+    align-items: start;
+    gap: 40px;
+  }
+  .hero-bottom > p {
+    font-size: 17px;
+    max-width: 330px;
+  }
+  .hero-foot span:last-child {
+    display: none;
+  }
+  .section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .section-heading {
+    gap: 30px;
+  }
+  .section-heading > div,
+  .section-heading > p {
+    max-width: 310px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .finder-body {
+    grid-template-columns: 1fr 1fr;
+  }
+  .need-options button {
+    font-size: 20px;
+    padding: 24px;
+  }
+  .need-result {
+    padding: 25px;
+  }
+  .need-result h3 {
+    font-size: 27px;
+  }
+  .need-result .button {
+    padding: 14px;
+    font-size: 13px;
+    gap: 14px;
+  }
+  .process {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .process > div > p {
+    max-width: 500px;
+  }
+  .process li p {
+    max-width: 560px;
+  }
+  .payroll-band {
+    gap: 7%;
+  }
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .closing h2 {
+    font-size: 90px;
+  }
+  .footer-top {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+  }
+  .footer-statement {
+    font-size: 21px;
+  }
+  .detail-intro {
+    flex-direction: column;
+    align-items: start;
+    gap: 28px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-intro {
+    position: static;
+  }
+  .contact-intro > p,
+  .what-next {
+    max-width: 550px;
+  }
+  .what-next {
+    margin-top: 30px;
+  }
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .contact-form {
+    padding: 32px;
+  }
+}
+@media (max-width: 520px) {
+  :root {
+    --gutter: 22px;
+  }
+  h1 {
+    font-size: 43px;
+  }
+  h2 {
+    font-size: 37px;
+  }
+  .hero {
+    min-height: min(630px, calc(100svh - 82px));
+    padding-top: 48px;
+    padding-bottom: 26px;
+    justify-content: flex-start;
+    gap: 38px;
+  }
+  .hero h1 {
+    font-size: clamp(55px, 14.3vw, 74px);
+    line-height: 1.04;
+  }
+  .hero-bottom {
+    flex-direction: column;
+    gap: 26px;
+  }
+  .hero-bottom > p {
+    max-width: 330px;
+    font-size: 17px;
+  }
+  .hero-actions {
+    gap: 12px;
+  }
+  .hero-foot {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 13px;
+    max-width: 270px;
+  }
+  .section {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+  .section-heading {
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+  .section-heading > div,
+  .section-heading > p {
+    max-width: none;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .service-card {
+    min-height: 235px;
+    padding: 25px;
+  }
+  .card-top {
+    margin-bottom: 24px;
+  }
+  .service-card h3 {
+    font-size: 25px;
+  }
+  .card-link {
+    padding-top: 22px;
+  }
+  .finder-body {
+    grid-template-columns: 1fr;
+  }
+  .need-options button {
+    min-height: 70px;
+    padding: 20px 22px;
+    font-size: 20px;
+  }
+  .need-result {
+    padding: 30px 24px;
+  }
+  .need-result h3 {
+    font-size: 30px;
+  }
+  .need-result .button {
+    font-size: 14px;
+    padding: 15px 18px;
+  }
+  .process li {
+    padding-left: 30px;
+  }
+  .process li h3 {
+    font-size: 23px;
+  }
+  .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .industry img {
+    aspect-ratio: 1.5;
+  }
+  .industry h3 {
+    font-size: 26px;
+  }
+  .payroll-band {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .payroll-list ul {
+    gap: 14px;
+  }
+  .faq-item {
+    padding: 0 18px;
+  }
+  .faq-item button {
+    font-size: 16px;
+    gap: 18px;
+  }
+  .faq-item p {
+    font-size: 16px;
+  }
+  .closing h2 {
+    font-size: 74px;
+  }
+  .closing-bottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 28px;
+    margin-top: 30px;
+  }
+  .closing-bottom p {
+    font-size: 16px;
+  }
+  .closing-bottom .button {
+    width: 100%;
+  }
+  footer {
+    padding-top: 48px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px 20px;
+    margin-bottom: 50px;
+  }
+  .footer-top > div:first-child {
+    grid-column: 1/-1;
+  }
+  .footer-statement {
+    font-size: 24px;
+  }
+  .brand.large {
+    font-size: 14.6vw;
+    margin-bottom: 30px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .footer-bottom > div {
+    gap: 24px;
+  }
+  .page-heading p {
+    font-size: 17px;
+  }
+  .detail-heading h1 {
+    font-size: 40px;
+  }
+  .tagline {
+    font-size: 26px;
+  }
+  .deliverables {
+    font-size: 17px;
+  }
+  .industry-page .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .industry-page h3 {
+    font-size: 28px;
+  }
+  .about-copy > div > p {
+    font-size: 18px;
+  }
+  .principles > div {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .contact-intro h1 {
+    font-size: 62px;
+  }
+  .contact-form {
+    padding: 24px 18px;
+    margin: 0 -4px;
+  }
+  .contact-form h2 {
+    font-size: 30px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .thank-you h1 {
+    font-size: 43px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Intermediate widths need their own layout, not only phone/desktop states. */
+@media (min-width: 521px) and (max-width: 680px) {
+  .hero-bottom,
+  .section-heading,
+  .closing-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+  .hero-bottom > p,
+  .section-heading > div,
+  .section-heading > p {
+    max-width: 100%;
+  }
+  .finder-body,
+  .payroll-band {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .finder-body {
+    gap: 0;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-top > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 360px) {
+  :root {
+    --gutter: 18px;
+  }
+  .hero h1 {
+    font-size: 14vw;
+  }
+  .closing h2 {
+    font-size: 64px;
+  }
+  .contact-intro h1 {
+    font-size: 54px;
+  }
+  .button {
+    gap: 16px;
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    max-height: none;
+    gap: 32px;
+  }
+}

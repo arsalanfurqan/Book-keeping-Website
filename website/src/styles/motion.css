@@ -1,0 +1,147 @@
+:root {
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes rise {
+  from {
+    opacity: 0.35;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes headline {
+  from {
+    opacity: 0.25;
+    transform: translateY(25%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes content-enter {
+  from {
+    opacity: 0.25;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes image-settle {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Release transform after the entrance so hover continues to work. */
+  .reveal.visible {
+    animation: rise 700ms var(--ease-reveal) backwards;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+  .industry.visible img {
+    animation: image-settle 1200ms var(--ease-reveal) backwards;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+  .page-heading > .visible,
+  .detail-heading > .visible {
+    animation-duration: 800ms;
+  }
+  .faq-answer.is-open > div,
+  .need-result > h3,
+  .need-result > p {
+    animation: content-enter 280ms var(--ease-reveal) backwards;
+  }
+  .button svg,
+  .industry-image > span,
+  .need-options button > span {
+    transition: transform 180ms var(--ease-reveal);
+  }
+  .button:focus-visible svg {
+    transform: translateX(4px);
+  }
+  .button:active {
+    transform: translateY(1px) scale(0.98);
+  }
+  .need-options button:active {
+    transform: scale(0.99);
+  }
+  .need-options button {
+    transition:
+      background 180ms,
+      transform 140ms;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .button:hover svg {
+      transform: translateX(4px);
+    }
+    .industry-image:hover > span {
+      transform: translate(2px, -2px);
+    }
+    .need-options button:hover > span {
+      transform: translateX(3px);
+    }
+  }
+  @media (max-width: 1000px) {
+    nav.open {
+      animation: menu-enter 220ms var(--ease-reveal) backwards;
+    }
+  }
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 260ms var(--ease-reveal),
+    visibility 260ms;
+}
+.faq-answer > div {
+  overflow: hidden;
+  min-height: 0;
+}
+.faq-answer.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  nav > a:not(.button) {
+    position: relative;
+  }
+  nav > a:not(.button)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms var(--ease-reveal);
+  }
+  nav > a:not(.button):hover::after,
+  nav > a:not(.button):focus-visible::after {
+    transform: scaleX(1);
+  }
+}

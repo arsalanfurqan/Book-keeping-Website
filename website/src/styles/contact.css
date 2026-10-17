@@ -1,0 +1,128 @@
+.contact {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 9%;
+  padding-top: 65px;
+  align-items: start;
+}
+.contact-intro {
+  position: sticky;
+  top: 40px;
+}
+.contact-intro h1 {
+  font-size: clamp(54px, 6.7vw, 96px);
+}
+.contact-intro > p {
+  max-width: 400px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+.what-next {
+  margin: 45px 0 26px;
+  max-width: 370px;
+}
+.what-next h3 {
+  font-size: 23px;
+  margin-bottom: 16px;
+}
+.what-next p {
+  font-size: 16px;
+}
+.contact-form {
+  background: white;
+  padding: 34px;
+  border-radius: 16px;
+}
+.contact-form h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.field {
+  margin-bottom: 22px;
+}
+.field label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.field label span {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid #c6d1cc;
+  border-radius: 7px;
+  padding: 12px;
+  font-size: 16px;
+}
+select {
+  padding-right: 20px;
+}
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.field-error {
+  font-size: 13px;
+  color: var(--error);
+  margin-top: 7px;
+}
+[aria-invalid="true"] {
+  border-color: var(--error) !important;
+}
+.consent {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  font-size: 13px;
+  margin: 25px 0;
+}
+.consent input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.consent a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-form > .button {
+  width: 100%;
+}
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.form-error {
+  background: #fff0ec;
+  color: var(--error);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size: 14px;
+}
