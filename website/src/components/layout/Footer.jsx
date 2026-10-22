@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { brand, services } from "../../../shared/content.mjs";
 import Brand from "./Brand.jsx";
+import ContactDetails from "./ContactDetails.jsx";
 
 function Footer() {
   return (
@@ -12,8 +13,7 @@ function Footer() {
             A clearer picture.
             <br />A more confident next step.
           </p>
-          {brand.email && <a href={`mailto:${brand.email}`}>{brand.email}</a>}
-          {brand.region && <p>{brand.region}</p>}
+          <ContactDetails />
         </div>
         <div>
           <h3>Explore</h3>

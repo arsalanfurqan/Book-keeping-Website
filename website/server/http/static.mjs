@@ -29,6 +29,7 @@ export async function serveStatic(req, res, url) {
     ".css": "text/css",
     ".svg": "image/svg+xml",
     ".jpg": "image/jpeg",
+    ".png": "image/png",
     ".woff2": "font/woff2",
     ".ttf": "font/ttf",
     ".txt": "text/plain",

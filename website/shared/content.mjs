@@ -1,13 +1,15 @@
 ﻿export const brand = {
-  name: "Clearstead",
-  email: "",
-  phone: "",
-  region: "",
+  name: "Ledgerlyapps",
+  slogan: "CPA Firm",
+  email: "Shayan@ledgerlyapps.com",
+  emails: ["Shayan@ledgerlyapps.com", "Michael.Startin@ledgerlyapps.com"],
+  phone: "(312)-517-2291",
+  phoneHref: "+13125172291",
+  region: "West Chicago, Illinois",
+  address: "1800 W Hawthorne Ln # 204, West Chicago, IL 60185, United States",
   bookingUrl: "",
   siteUrl: "",
-  launchReady: false,
-  siteUrl: "",
-  // Enable only after replacing the temporary brand and draft legal pages.
+  // Enable after hosting and legal review are complete.
   launchReady: false,
 };
 export const services = [

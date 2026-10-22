@@ -1,4 +1,5 @@
 import React from "react";
+import TawkChat from "./components/TawkChat.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
@@ -41,6 +42,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <TawkChat />
       <RouteEffects />
     </BrowserRouter>
   );

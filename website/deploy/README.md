@@ -1,6 +1,6 @@
 # Deployment and operations
 
-The site still needs real business details, a domain and hosting credentials. These
+Ledgerlyapps business details are configured. The site still needs a domain and hosting setup. These
 files prepare deployment; they do not purchase hosting or publish anything.
 
 ## Configure
@@ -10,8 +10,8 @@ files prepare deployment; they do not purchase hosting or publish anything.
    `shared/content.mjs`. Finalize the existing draft privacy/terms for the real
    operator, jurisdiction and retention policy. Then set `launchReady: true`.
 3. Set `SMTP_HOST`, `SMTP_PORT` (587 or 465), `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`
-   and `ENQUIRY_TO` using your email provider. Both addresses must be single plain
-   email addresses. Complete any sender/domain verification required by the provider.
+   and `ENQUIRY_TO` using your email provider. The sender must be one plain email
+   address; recipients may be comma-separated. Complete any sender/domain verification required by the provider.
 4. Generate a 32-byte backup key with
    `node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"`.
    Store it in `BACKUP_KEY` and a separate password manager. Losing it makes the

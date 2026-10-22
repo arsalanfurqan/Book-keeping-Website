@@ -9,6 +9,7 @@ import Finder from "../components/sections/Finder.jsx";
 import Process from "../components/sections/Process.jsx";
 import IndustryGrid from "../components/industries/IndustryGrid.jsx";
 import Hero from "../components/sections/Hero.jsx";
+import Reviews from "../components/sections/Reviews.jsx";
 
 function Home() {
   return (
@@ -80,6 +81,7 @@ function Home() {
           <p>Availability depends on your country and agreed scope.</p>
         </div>
       </section>
+      <Reviews />
       <FAQ />
       <CTA />
     </>

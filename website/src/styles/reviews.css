@@ -1,0 +1,178 @@
+.reviews-section {
+  background: var(--mint);
+}
+.reviews-section .section-heading > div {
+  max-width: 680px;
+}
+.reviews-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.reviews-disclosure {
+  color: var(--muted);
+  font-size: 14px;
+}
+.reviews-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.reviews-grid::-webkit-scrollbar {
+  display: none;
+}
+.review-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: clamp(24px, 4vw, 56px);
+  border-top: 2px solid var(--accent);
+  background: var(--bg);
+}
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.review-service {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+.review-quote-mark {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 56px;
+  line-height: 0.7;
+}
+.review-card .review-text {
+  flex: 1;
+  margin: 0 0 32px;
+  font-family: var(--display);
+  max-width: 900px;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+.review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.review-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--deep);
+  font-size: 12px;
+}
+.review-card strong,
+.review-card small {
+  display: block;
+}
+.review-card strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.review-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.reviews-controls,
+.reviews-arrows,
+.reviews-dots {
+  display: flex;
+  align-items: center;
+}
+.reviews-controls {
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+.reviews-arrows {
+  gap: 10px;
+}
+.reviews-count {
+  font-size: 13px;
+  color: var(--muted);
+  margin-right: 8px;
+}
+.reviews-arrows button {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--deep);
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+.reviews-arrows button:hover:not(:disabled) {
+  background: var(--deep);
+  color: white;
+}
+.reviews-arrows button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.reviews-dots button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.reviews-dots button span {
+  width: 7px;
+  height: 7px;
+  border-radius: 10px;
+  background: var(--muted);
+}
+.reviews-dots button[aria-current="true"] span {
+  width: 22px;
+  background: var(--deep);
+}
+.franchise-businesses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+  margin: 0 0 28px;
+  list-style: none;
+}
+.franchise-businesses li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.franchise-businesses li > span:last-child {
+  display: grid;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .franchise-businesses {
+    grid-template-columns: 1fr;
+  }
+}

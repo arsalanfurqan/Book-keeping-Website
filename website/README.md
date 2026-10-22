@@ -72,7 +72,7 @@ to check formatting without changing files.
 
 ## Content and business details
 
-Edit `shared/content.mjs` to set the company name, email, phone, service region, booking URL, services and FAQs. **Clearstead is a temporary name.** Prices, credentials, client logos and testimonials have not been invented. Empty contact details stay hidden.
+Ledgerlyapps business details and the CPA Firm slogan are configured in `shared/content.mjs`, along with the supplied phone, both email addresses and office address. Edit that file for services, FAQs and an optional booking URL. See [Ledgerlyapps setup](deploy/LEDGERLYAPPS.md) for email delivery and Tawk.to activation.
 
 The consultation form is an enquiry-to-schedule flow, not a live calendar. Setting a real HTTPS `bookingUrl` adds a scheduling link. A CMS is not connected; content is currently edited in the shared file.
 
@@ -82,7 +82,7 @@ The consultation form is an enquiry-to-schedule flow, not a live calendar. Setti
 
 Copy `.env.example` to `.env` if configuration is needed. SMTP email notifications and an optional HTTPS `LEAD_WEBHOOK_URL` send only the reference and service identifier after storage. No notifications are sent until configured. Failed notifications are marked in the saved record; saved enquiries still return success.
 
-This file-backed implementation is intended for a single Node process on a persistent disk. Before public production: provision persistent storage and backups, configure HTTPS, configure real enquiry follow-up, replace draft legal text and brand details, and define a retention/deletion process. A multi-instance deployment should use a shared database and distributed rate limiting. Do not place the data directory inside `dist/`.
+This file-backed implementation is intended for a single Node process on a persistent disk. Before public production: provision persistent storage and backups, configure HTTPS, configure real enquiry follow-up, finalize draft legal text, and define a retention/deletion process. A multi-instance deployment should use a shared database and distributed rate limiting. Do not place the data directory inside `dist/`.
 
 ## Verification
 

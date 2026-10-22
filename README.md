@@ -1,6 +1,6 @@
 # Book-keeping-Website
 
-Accounting services website built with React.js, Vite and a Node.js backend.
+Ledgerlyapps — CPA Firm. Accounting services website built with React.js, Vite and a Node.js backend.
 
 The application source lives in [`website/`](website/). The original project brief
 is in [`Accounting_Website_Complete_MD_Files/`](Accounting_Website_Complete_MD_Files/).
@@ -21,5 +21,5 @@ For production build instructions, configuration and tests, see the
 [application README](website/README.md). For email notifications, encrypted
 backups and hosting, see the [deployment guide](website/deploy/README.md).
 
-Company details and legal content still need to be finalized before public launch.
+Company details are configured. Mail delivery, Tawk.to widget IDs, hosting and final legal review remain before public launch. See the [Ledgerlyapps setup notes](website/deploy/LEDGERLYAPPS.md).
 Credentials, enquiry records, backups and local tooling are excluded from Git.

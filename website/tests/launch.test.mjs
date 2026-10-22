@@ -62,6 +62,22 @@ test("email notification uses TLS, minimizes personal data and reports delivery 
     ENQUIRY_TO: "inbox@example.test",
   };
   assert.equal(smtpConfiguration(env).requireTLS, true);
+  assert.equal(
+    smtpConfiguration({
+      ...env,
+      ENQUIRY_TO: "one@example.test, two@example.test",
+    }).requireTLS,
+    true,
+  );
+  assert.throws(() =>
+    smtpConfiguration({
+      ...env,
+      ENQUIRY_TO: "one@example.test,\r\nBcc:bad@example.test",
+    }),
+  );
+  assert.throws(() =>
+    smtpConfiguration({ ...env, ENQUIRY_TO: "one@example.test," }),
+  );
   assert.throws(() => smtpConfiguration({ SMTP_HOST: "smtp.example" }));
   let sent;
   const notifier = createNotifier({
@@ -85,6 +101,20 @@ test("email notification uses TLS, minimizes personal data and reports delivery 
   assert.equal(sent.to, env.ENQUIRY_TO);
   assert.ok(!JSON.stringify(sent).includes("private@example.test"));
   assert.ok(!JSON.stringify(sent).includes("private details"));
+  const partial = createNotifier({
+    env: { ...env, ENQUIRY_TO: "one@example.test,two@example.test" },
+    transport: {
+      async sendMail() {
+        return {
+          accepted: ["one@example.test"],
+          rejected: ["two@example.test"],
+        };
+      },
+    },
+  });
+  assert.deepEqual(await partial.send({ id: "ENQ-123", service: "payroll" }), {
+    email: "failed",
+  });
   const failed = createNotifier({
     env,
     transport: {

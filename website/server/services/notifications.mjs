@@ -14,9 +14,17 @@ export function smtpConfiguration(env = process.env) {
     );
   const port = Number(env.SMTP_PORT || 587);
   if (![465, 587].includes(port)) throw new Error("Use SMTP port 465 or 587.");
-  for (const key of ["SMTP_FROM", "ENQUIRY_TO"])
-    if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(env[key]))
-      throw new Error(`${key} must be a single email address.`);
+  const emailPattern = /^[^\s@<>,;:]+@[^\s@<>,;:]+\.[^\s@<>,;:]+$/;
+  if (/[\r\n]/.test(env.ENQUIRY_TO))
+    throw new Error("Invalid recipient header.");
+  if (!emailPattern.test(env.SMTP_FROM))
+    throw new Error("SMTP_FROM must be a single email address.");
+  const recipients = env.ENQUIRY_TO.split(",").map((email) => email.trim());
+  if (
+    !recipients.length ||
+    recipients.some((email) => !emailPattern.test(email))
+  )
+    throw new Error("ENQUIRY_TO must contain comma-separated email addresses.");
   return {
     host: env.SMTP_HOST,
     port,
@@ -52,7 +60,10 @@ export function createNotifier({
             disableFileAccess: true,
             disableUrlAccess: true,
           });
-          results.email = result.accepted?.length ? "delivered" : "failed";
+          results.email =
+            result.accepted?.length && !result.rejected?.length
+              ? "delivered"
+              : "failed";
         } catch {
           results.email = "failed";
         }

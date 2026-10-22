@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { services } from "../../shared/content.mjs";
+import { brand } from "../../shared/content.mjs";
+import { chatEnabled } from "../../shared/chat.mjs";
 import Heading from "../components/ui/Heading.jsx";
 
 function Legal({ terms = false }) {
@@ -11,6 +12,12 @@ function Legal({ terms = false }) {
         text="Draft for this development version. Operator details and jurisdiction-specific wording must be confirmed before public launch."
       />
       <article className="section legal">
+        <h2>{brand.name}</h2>
+        <p>
+          {brand.address}
+          <br />
+          <a href={`mailto:${brand.email}`}>{brand.email}</a>
+        </p>
         {terms ? (
           <>
             <h2>About this website</h2>
@@ -54,10 +61,28 @@ function Legal({ terms = false }) {
             </p>
             <h2>Technical information</h2>
             <p>
-              This version uses no analytics or advertising cookies. Request
-              counts are temporarily tracked by network address to help limit
-              spam. Form details are not stored in browser storage.
+              Request counts are temporarily tracked by network address to help
+              limit spam. Form details are not stored in browser storage.
             </p>
+            {chatEnabled() && (
+              <>
+                <h2>Live chat</h2>
+                <p>
+                  Our Tawk.to widget supports live chat and visitor monitoring.
+                  It may process browser and device information, pages visited,
+                  cookies and messages you choose to send. Please do not share
+                  sensitive financial records in chat. See{" "}
+                  <a
+                    href="https://www.tawk.to/privacy-policy/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Tawk.to's privacy policy
+                  </a>{" "}
+                  for information about its processing.
+                </p>
+              </>
+            )}
             <h2>Before public release</h2>
             <p>
               The operator must confirm its identity, privacy contact, retention

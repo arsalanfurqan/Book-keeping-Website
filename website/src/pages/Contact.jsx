@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { brand, services } from "../../shared/content.mjs";
 import Arrow from "../components/ui/Arrow.jsx";
 import useConsultationForm from "../hooks/useConsultationForm.js";
+import ContactDetails from "../components/layout/ContactDetails.jsx";
 
 function Contact() {
   const { form, errors, busy, error, errorRef, update, submit } =
@@ -50,6 +51,7 @@ function Contact() {
           A question, a challenge, or a fresh start. Tell us what your business
           needs help with.
         </p>
+        <ContactDetails />
         <div className="what-next">
           <h3>What happens next?</h3>
           <p>
@@ -61,11 +63,6 @@ function Contact() {
             appointment.
           </p>
         </div>
-        {brand.email && (
-          <a className="text-link" href={`mailto:${brand.email}`}>
-            {brand.email}
-          </a>
-        )}
         {brand.bookingUrl && (
           <a
             className="button"
