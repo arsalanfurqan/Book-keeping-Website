@@ -39,13 +39,14 @@ export default function Reviews() {
       <div className="section-heading">
         <div>
           <h2 id="reviews-title" className="reveal">
-            A little clarity.
-            <br />A lot of difference.
+            Your experience.
+            <br />Our focus.
           </h2>
         </div>
         <p className="reviews-disclosure">
-          Practical bookkeeping, reporting and payroll support, shaped around
-          your business and agreed service scope.
+          Working with Ledgerlyapps starts with understanding your business.
+          Our approach brings organized records, clear reports and an agreed
+          scope of support to your day-to-day finances.
         </p>
       </div>
       <div

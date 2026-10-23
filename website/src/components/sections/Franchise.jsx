@@ -13,6 +13,8 @@ export default function Franchise() {
         <div className="franchise-copy">
           <h2 id="franchise-title">Your store.<br />Our attention to detail.</h2>
           <p>{franchiseHighlight.description}</p>
+          <h3 className="franchise-clients-title">Meet two of our top clients</h3>
+          <p>Sarah Crow and Won Lee are among the franchise clients we support. We also work with other independently owned franchise businesses, with bookkeeping support shaped around each business.</p>
           <ul className="franchise-businesses" aria-label="Franchise business details">
             {franchiseHighlight.businesses.map((business) => (
               <li key={business.business}>

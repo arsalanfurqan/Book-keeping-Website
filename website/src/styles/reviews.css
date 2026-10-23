@@ -1,6 +1,13 @@
 .reviews-section {
-  background: var(--mint);
+  background: linear-gradient(90deg, rgba(4, 40, 35, 0.94), rgba(4, 40, 35, 0.7)), url('/images/advisory.jpg') center / cover;
 }
+.reviews-section .section-heading h2,
+.reviews-section .reviews-disclosure,
+.reviews-section .reviews-count { color: #fff; }
+.reviews-section .reviews-arrows button { color: #fff; border-color: #fff; }
+.reviews-section .reviews-dots button span { background: #c2d5cb; }
+.reviews-section .reviews-dots button[aria-current="true"] span { background: #fff; }
+.franchise-clients-title { margin: 0 0 12px; font-size: 22px; }
 .review-body {
   flex: 1;
   min-width: 0;
