@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { serviceHighlights } from "../../data/serviceHighlights.js";
+import RatingPreview from "../ui/RatingPreview.jsx";
 
 export default function Reviews() {
   const track = useRef(null);
@@ -101,8 +102,8 @@ export default function Reviews() {
           >
             <div className="review-card-top">
               <h3 className="review-service">{review.service}</h3>
-              <span className="review-star" aria-hidden="true">✦</span>
             </div>
+            <RatingPreview />
             <div className="review-body">
               <p className="review-text">{review.description}</p>
             </div>

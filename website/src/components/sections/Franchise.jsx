@@ -1,6 +1,7 @@
 import React from "react";
 import { franchiseHighlight } from "../../data/serviceHighlights.js";
 import Button from "../ui/Button.jsx";
+import RatingPreview from "../ui/RatingPreview.jsx";
 
 export default function Franchise() {
   return (
@@ -18,8 +19,11 @@ export default function Franchise() {
           <ul className="franchise-businesses" aria-label="Franchise business details">
             {franchiseHighlight.businesses.map((business) => (
               <li key={business.business}>
-                <span className="profile-star" aria-hidden="true">✦</span>
-                <span className="review-avatar" aria-hidden="true">{business.name.split(" ").map((name) => name[0]).join("")}</span>
+                <RatingPreview />
+                <div className="client-placeholder">
+                  <img src="/images/profile-placeholder.svg" alt="Generic profile illustration; not a photograph of the client" width="80" height="80" />
+                  <small>Placeholder photo</small>
+                </div>
                 <span>
                   <strong>{business.name}</strong>
                   <span>{business.business}</span>

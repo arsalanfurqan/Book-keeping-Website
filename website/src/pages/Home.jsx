@@ -11,11 +11,13 @@ import IndustryGrid from "../components/industries/IndustryGrid.jsx";
 import Hero from "../components/sections/Hero.jsx";
 import Franchise from "../components/sections/Franchise.jsx";
 import Reviews from "../components/sections/Reviews.jsx";
+import SoftwareStrip from "../components/sections/SoftwareStrip.jsx";
 
 function Home() {
   return (
     <>
       <Hero />
+      <SoftwareStrip />
       <section className="section services-section">
         <div className="section-heading">
           <h2 className="reveal">
