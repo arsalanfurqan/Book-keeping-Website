@@ -2,19 +2,19 @@ export const serviceHighlights = [
   {
     service: "Monthly bookkeeping",
     description:
-      "Keep transactions, reconciliations and monthly records organized, so you can spend more time understanding your business and planning what comes next.",
+      "Organized transactions, reconciliations and monthly records. More clarity for your next business decision.",
     profile: "For small businesses",
   },
   {
     service: "Financial reporting",
     description:
-      "Turn financial records into clear reports and practical conversations about cash flow, business performance and the decisions ahead.",
+      "Clear financial reports to help you understand cash flow, track performance and plan what comes next.",
     profile: "For growing businesses",
   },
   {
     service: "Payroll support",
     description:
-      "Build a consistent process for payroll records, input preparation and pay-cycle reviews, with support tailored to your location and agreed scope.",
+      "A consistent process for payroll records, preparation and pay-cycle reviews, tailored to your agreed scope.",
     profile: "For professional services teams",
   },
  ];

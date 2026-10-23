@@ -100,14 +100,16 @@ export default function Reviews() {
           >
             <div className="review-card-top">
               <h3 className="review-service">{review.service}</h3>
+              <span className="review-star" aria-hidden="true">✦</span>
             </div>
             <div className="review-body">
               <p className="review-text">{review.description}</p>
             </div>
             <figcaption>
+              <span className="review-avatar" aria-hidden="true">LA</span>
               <span>
-                <strong>{review.profile}</strong>
-                <small>Ledgerlyapps · CPA Firm</small>
+                <strong>Ledgerlyapps</strong>
+                <small>{review.profile}</small>
               </span>
             </figcaption>
           </figure>

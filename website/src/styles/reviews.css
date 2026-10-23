@@ -43,6 +43,7 @@
   font-size: 14px;
 }
 .reviews-grid {
+  max-width: 480px;
   display: flex;
   align-items: flex-start;
   gap: 24px;
@@ -56,6 +57,8 @@
   display: none;
 }
 .review-card {
+  aspect-ratio: 1;
+  border-radius: 12px;
   flex: 0 0 100%;
   min-width: 0;
   scroll-snap-align: start;
@@ -63,7 +66,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: clamp(24px, 4vw, 56px);
+  padding: clamp(20px, 3vw, 36px);
   background: var(--bg);
 }
 .review-card-top {
@@ -76,15 +79,15 @@
 .review-service {
   margin: 0;
   color: var(--accent);
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 600;
 }
 .review-card .review-text {
   flex: 1;
-  margin: 0 0 32px;
+  margin: 0;
   font-family: var(--display);
   max-width: 900px;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-size: clamp(15px, 2.2vw, 24px);
   line-height: 1.6;
   letter-spacing: -0.025em;
 }
@@ -124,9 +127,20 @@
   align-items: center;
 }
 .reviews-controls {
+  max-width: 480px;
   justify-content: space-between;
   gap: 16px;
   margin-top: 24px;
+}
+.review-star {
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+}
+.review-card .review-avatar {
+  background: var(--deep);
+  color: var(--mint);
+  font-weight: 600;
 }
 .reviews-arrows {
   gap: 10px;
@@ -182,7 +196,11 @@
   list-style: none;
 }
 .franchise-businesses li {
+  position: relative;
+  aspect-ratio: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   min-width: 0;
@@ -191,9 +209,18 @@
   border-radius: 12px;
   background: var(--mint);
 }
+.profile-star {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+}
 .franchise-businesses .review-avatar {
-  flex-basis: 48px;
-  height: 48px;
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
   background: var(--deep);
   color: var(--mint);
   font-family: var(--display);

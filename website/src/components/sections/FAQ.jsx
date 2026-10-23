@@ -7,7 +7,7 @@ function FAQ({ short = false }) {
   return (
     <section className="section faq">
       <div>
-        <h2 className="reveal">Good questions.</h2>
+        <h2 className="reveal">FAQ</h2>
         <p>
           Something else on your mind?
           <br />

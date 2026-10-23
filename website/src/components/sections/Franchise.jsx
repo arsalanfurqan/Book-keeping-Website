@@ -16,6 +16,7 @@ export default function Franchise() {
           <ul className="franchise-businesses" aria-label="Franchise business details">
             {franchiseHighlight.businesses.map((business) => (
               <li key={business.business}>
+                <span className="profile-star" aria-hidden="true">✦</span>
                 <span className="review-avatar" aria-hidden="true">{business.name.split(" ").map((name) => name[0]).join("")}</span>
                 <span>
                   <strong>{business.name}</strong>
