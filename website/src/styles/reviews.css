@@ -241,19 +241,28 @@
   letter-spacing: -0.03em;
   margin-bottom: 8px;
 }
-.client-placeholder { display: grid; gap: 6px; }
-.client-placeholder img { display: block; width: 80px; height: 80px; border-radius: 50%; }
-.client-placeholder small { font-size: 12px; color: var(--muted); }
+.client-portrait { display: block; width: 96px; height: 96px; flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center 35%; }
 .rating-preview { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .rating-preview > span { color: #946200; font-size: 20px; letter-spacing: 2px; line-height: 1; }
 .rating-preview small { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .franchise-businesses .rating-preview { margin: 0; }
 .review-card-top { margin-bottom: 14px; }
 .review-card .review-text { font-size: clamp(14px, 2vw, 22px); line-height: 1.5; }
-.software-section { padding-top: 44px; padding-bottom: 44px; }
+.software-section { padding-top: 44px; padding-bottom: 44px; background: var(--mint); border-block: 1px solid #c2d5cb; }
 .software-section h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 12px; }
 .software-section > p { color: var(--muted); margin: 0 0 28px; }
-.software-logos { display: flex; align-items: center; justify-content: space-between; gap: 40px; overflow-x: auto; padding: 8px 0 16px; margin: 0; list-style: none; }
+.software-marquee { overflow: hidden; padding-block: 24px; background: var(--bg); border-radius: 12px; }
+.software-track { display: flex; width: max-content; animation: software-scroll 24s linear infinite; }
+.software-logos { display: flex; align-items: center; justify-content: space-around; flex-shrink: 0; width: max(88vw, 960px); gap: 40px; padding: 8px 40px; margin: 0; list-style: none; }
+.software-marquee:hover .software-track,
+.software-marquee[data-paused="true"] .software-track { animation-play-state: paused; }
+.software-pause { display: block; margin: 16px 0 0 auto; min-height: 44px; padding: 8px 16px; border: 1px solid var(--accent); border-radius: 24px; background: transparent; color: var(--deep); cursor: pointer; font: inherit; font-size: 13px; }
+@keyframes software-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .software-track { animation: none; width: 100%; }
+  .software-logos { width: 100%; flex-wrap: wrap; padding: 12px 20px; gap: 24px; }
+  .software-logos[aria-hidden="true"], .software-pause { display: none; }
+}
 .software-logos li { display: flex; align-items: center; flex: 0 0 auto; gap: 12px; font-family: var(--display); font-size: 22px; font-weight: 600; }
 .software-logos img { display: block; object-fit: contain; }
 .franchise-businesses .business-location {

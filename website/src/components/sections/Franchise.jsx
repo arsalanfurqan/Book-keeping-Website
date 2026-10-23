@@ -20,10 +20,7 @@ export default function Franchise() {
             {franchiseHighlight.businesses.map((business) => (
               <li key={business.business}>
                 <RatingPreview />
-                <div className="client-placeholder">
-                  <img src="/images/profile-placeholder.svg" alt="Generic profile illustration; not a photograph of the client" width="80" height="80" />
-                  <small>Placeholder photo</small>
-                </div>
+                <img className="client-portrait" src={business.image} alt={business.name} width="96" height="96" loading="lazy" />
                 <span>
                   <strong>{business.name}</strong>
                   <span>{business.business}</span>

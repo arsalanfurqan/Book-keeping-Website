@@ -29,11 +29,13 @@ export const franchiseHighlight = {
     businesses: [
       {
         name: "Sarah Crow",
+        image: "/images/sarah-crow.png",
         business: "The UPS Store #2041",
         location: "Missouri",
       },
       {
         name: "Won Lee",
+        image: "/images/won-lee.png",
         business: "The UPS Store #0180",
         location: "California",
       },
