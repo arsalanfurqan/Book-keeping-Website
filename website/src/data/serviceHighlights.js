@@ -1,25 +1,27 @@
 export const serviceHighlights = [
   {
     service: "Monthly bookkeeping",
-    quote:
+    description:
       "Keep transactions, reconciliations and monthly records organized, so you can spend more time understanding your business and planning what comes next.",
     profile: "For small businesses",
   },
   {
     service: "Financial reporting",
-    quote:
+    description:
       "Turn financial records into clear reports and practical conversations about cash flow, business performance and the decisions ahead.",
     profile: "For growing businesses",
   },
   {
     service: "Payroll support",
-    quote:
+    description:
       "Build a consistent process for payroll records, input preparation and pay-cycle reviews, with support tailored to your location and agreed scope.",
     profile: "For professional services teams",
   },
   {
     service: "Franchise bookkeeping",
-    quote:
+    image: "/images/ups-store.png",
+    imageCaption: "Focused on your books. So you can focus on your store.",
+    description:
       "Bookkeeping support for independently owned franchise businesses. Keep store records organized and make monthly financial reporting easier to follow.",
     profile: "For independent franchise operators",
     businesses: [

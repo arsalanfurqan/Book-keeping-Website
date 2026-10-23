@@ -2,7 +2,12 @@ import "../server/config.mjs";
 import { brand } from "../shared/content.mjs";
 import { siteOrigin } from "../shared/seo.mjs";
 import { smtpConfiguration } from "../server/services/notifications.mjs";
+import { chatEnabled } from "../shared/chat.mjs";
 const missing = [];
+if (!chatEnabled())
+  missing.push(
+    "Add the Tawk.to Property ID and Widget ID to shared/chat.mjs, then verify live chat.",
+  );
 if (!brand.name || brand.name === "Clearstead")
   missing.push("Replace temporary company name in shared/content.mjs.");
 if (!brand.email) missing.push("Add the public business email.");

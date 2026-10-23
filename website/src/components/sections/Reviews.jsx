@@ -1,9 +1,26 @@
-import React, { useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { serviceHighlights } from "../../data/serviceHighlights.js";
 
 export default function Reviews() {
   const track = useRef(null);
   const [active, setActive] = useState(0);
+  useLayoutEffect(() => {
+    const element = track.current;
+    const slide = element.children[active];
+    let width = element.clientWidth;
+    const fit = () => {
+      if (element.clientWidth !== width) {
+        width = element.clientWidth;
+        element.scrollTo({ left: active * (width + 24), behavior: "instant" });
+      }
+      element.style.height = `${Math.ceil(slide.getBoundingClientRect().height)}px`;
+    };
+    const observer = new ResizeObserver(fit);
+    observer.observe(slide);
+    observer.observe(element);
+    fit();
+    return () => observer.disconnect();
+  }, [active]);
   const goTo = (index) => {
     const element = track.current;
     const step = element.clientWidth + 24;
@@ -21,7 +38,6 @@ export default function Reviews() {
     >
       <div className="section-heading">
         <div>
-          <span className="reviews-eyebrow">How we support your business</span>
           <h2 id="reviews-title" className="reveal">
             A little clarity.
             <br />A lot of difference.
@@ -54,6 +70,11 @@ export default function Reviews() {
           )
         }
         onKeyDown={(event) => {
+          if (event.key === "Home" || event.key === "End") {
+            event.preventDefault();
+            goTo(event.key === "Home" ? 0 : serviceHighlights.length - 1);
+            return;
+          }
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
             goTo(
@@ -75,37 +96,57 @@ export default function Reviews() {
             role="group"
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${serviceHighlights.length}`}
+            aria-hidden={active !== index}
           >
             <div className="review-card-top">
-              <span className="review-service">{review.service}</span>
+              <h3 className="review-service">{review.service}</h3>
             </div>
-            <p className="review-text">{review.quote}</p>
-            {review.businesses && (
-              <ul
-                className="franchise-businesses"
-                aria-label="Franchise business details"
-              >
-                {review.businesses.map((business) => (
-                  <li key={business.business}>
-                    <span className="review-avatar" aria-hidden="true">
-                      {business.name
-                        .split(" ")
-                        .map((name) => name[0])
-                        .join("")}
-                    </span>
-                    <span>
-                      <strong>{business.name}</strong>
-                      <span>{business.business}</span>
-                      <small>{business.location}</small>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div
+              className={
+                review.image ? "review-body franchise-story" : "review-body"
+              }
+            >
+              {review.image && (
+                <div className="franchise-photo">
+                  <img
+                    src={review.image}
+                    alt="The UPS Store storefront"
+                    width="468"
+                    height="444"
+                    loading="lazy"
+                  />
+                  <p>{review.imageCaption}</p>
+                </div>
+              )}
+              <div>
+                <p className="review-text">{review.description}</p>
+                {review.businesses && (
+                  <ul
+                    className="franchise-businesses"
+                    aria-label="Franchise business details"
+                  >
+                    {review.businesses.map((business) => (
+                      <li key={business.business}>
+                        <span className="review-avatar" aria-hidden="true">
+                          {business.name
+                            .split(" ")
+                            .map((name) => name[0])
+                            .join("")}
+                        </span>
+                        <span>
+                          <strong>{business.name}</strong>
+                          <span>{business.business}</span>
+                          <small className="business-location">
+                            {business.location}, USA
+                          </small>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
             <figcaption>
-              <span className="review-avatar" aria-hidden="true">
-                0{index + 1}
-              </span>
               <span>
                 <strong>{review.profile}</strong>
                 <small>Ledgerlyapps · CPA Firm</small>
@@ -130,7 +171,12 @@ export default function Reviews() {
           ))}
         </div>
         <div className="reviews-arrows">
-          <span className="reviews-count">
+          <span
+            className="reviews-count"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {active + 1} / {serviceHighlights.length}
           </span>
           <button

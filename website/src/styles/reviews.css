@@ -1,17 +1,42 @@
 .reviews-section {
   background: var(--mint);
 }
+.review-body {
+  flex: 1;
+  min-width: 0;
+}
+.franchise-story {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+.franchise-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.franchise-photo p {
+  margin: 16px 0 0;
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--deep);
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .franchise-story {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .franchise-photo {
+    max-width: 340px;
+  }
+}
 .reviews-section .section-heading > div {
   max-width: 680px;
-}
-.reviews-eyebrow {
-  display: block;
-  margin-bottom: 20px;
-  color: var(--deep);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 .reviews-disclosure {
   color: var(--muted);
@@ -19,8 +44,10 @@
 }
 .reviews-grid {
   display: flex;
+  align-items: flex-start;
   gap: 24px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
@@ -37,7 +64,6 @@
   flex-direction: column;
   margin: 0;
   padding: clamp(24px, 4vw, 56px);
-  border-top: 2px solid var(--accent);
   background: var(--bg);
 }
 .review-card-top {
@@ -48,15 +74,10 @@
   margin-bottom: 24px;
 }
 .review-service {
+  margin: 0;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
-}
-.review-quote-mark {
-  color: var(--accent);
-  font-family: Georgia, serif;
-  font-size: 56px;
-  line-height: 0.7;
 }
 .review-card .review-text {
   flex: 1;
@@ -72,7 +93,6 @@
   align-items: center;
   gap: 12px;
   padding-top: 20px;
-  border-top: 1px solid var(--line);
 }
 .review-avatar {
   display: grid;
@@ -82,7 +102,7 @@
   border-radius: 50%;
   background: var(--mint);
   color: var(--deep);
-  font-size: 12px;
+  font-size: 13px;
 }
 .review-card strong,
 .review-card small {
@@ -95,7 +115,7 @@
 .review-card small {
   margin-top: 4px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 .reviews-controls,
 .reviews-arrows,
@@ -137,7 +157,7 @@
 .reviews-dots button {
   display: grid;
   place-items: center;
-  width: 32px;
+  width: 44px;
   height: 44px;
   border: 0;
   background: transparent;
@@ -166,13 +186,44 @@
   align-items: center;
   gap: 14px;
   min-width: 0;
+  align-items: flex-start;
+  padding: 24px 20px;
+  border-radius: 12px;
+  background: var(--mint);
+}
+.franchise-businesses .review-avatar {
+  flex-basis: 48px;
+  height: 48px;
+  background: var(--deep);
+  color: var(--mint);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+}
+.franchise-businesses strong {
+  font-family: var(--display);
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.franchise-businesses .business-location {
+  margin-top: 10px;
+  font-size: 13px;
 }
 .franchise-businesses li > span:last-child {
   display: grid;
   font-size: 14px;
 }
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .franchise-businesses {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .reviews-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
   }
 }
