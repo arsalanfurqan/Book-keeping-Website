@@ -50,7 +50,7 @@
   font-size: 14px;
 }
 .reviews-grid {
-  max-width: 480px;
+  max-width: 760px;
   display: flex;
   align-items: flex-start;
   gap: 24px;
@@ -134,7 +134,7 @@
   align-items: center;
 }
 .reviews-controls {
-  max-width: 480px;
+  max-width: 760px;
   justify-content: space-between;
   gap: 16px;
   margin-top: 24px;
@@ -248,6 +248,25 @@
 .franchise-businesses .rating-preview { margin: 0; }
 .review-card-top { margin-bottom: 14px; }
 .review-card .review-text { font-size: clamp(14px, 2vw, 22px); line-height: 1.5; }
+.client-total { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; color: #fff; margin: 0 0 40px; font-size: 22px; }
+.client-total strong { font-family: var(--display); font-size: clamp(56px, 8vw, 100px); line-height: 1; }
+.client-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0 0 56px; max-width: 1000px; color: #fff; }
+.client-stats > div { display: flex; flex-direction: column-reverse; gap: 12px; padding: 20px 0; border-bottom: 1px solid #8eaaa0; }
+.client-stats dt { font-size: clamp(14px, 1.5vw, 18px); }
+.client-stats dd { margin: 0; font-family: var(--display); font-size: clamp(38px, 6vw, 80px); line-height: 1.1; }
+@media (max-width: 400px) { .client-stats { gap: 12px; } .client-stats dd { font-size: 34px; } .client-stats dt { font-size: 13px; } }
+.client-profiles { margin-bottom: 64px; }
+.client-profiles > h3, .service-support-title { color: #fff; font-size: clamp(24px, 3vw, 36px); }
+.client-profiles > p { max-width: 760px; color: #e3eee7; line-height: 1.7; margin-bottom: 28px; }
+.client-profiles .franchise-businesses { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1000px; }
+.client-profiles .franchise-businesses li { padding: clamp(24px, 4vw, 48px); }
+.reviews-section .review-card { aspect-ratio: auto; min-height: 400px; }
+.service-support-title { margin: 0 0 24px; }
+@media (max-width: 600px) {
+  .client-profiles .franchise-businesses { grid-template-columns: 1fr; }
+  .client-profiles .franchise-businesses li { aspect-ratio: auto; min-height: 320px; }
+  .reviews-section .review-card { min-height: 320px; }
+}
 .software-section { padding-top: 44px; padding-bottom: 44px; background: var(--mint); border-block: 1px solid #c2d5cb; }
 .software-section h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 12px; }
 .software-section > p { color: var(--muted); margin: 0 0 28px; }

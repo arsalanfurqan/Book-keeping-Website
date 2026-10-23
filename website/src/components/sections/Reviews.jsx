@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { serviceHighlights } from "../../data/serviceHighlights.js";
+import ClientProfiles from "./ClientProfiles.jsx";
 import RatingPreview from "../ui/RatingPreview.jsx";
 
 export default function Reviews() {
@@ -50,6 +51,13 @@ export default function Reviews() {
           scope of support to your day-to-day finances.
         </p>
       </div>
+      <dl className="client-stats" aria-label="Client statistics">
+        <div><dt>Clients served</dt><dd>100+</dd></div>
+        <div><dt>Active clients</dt><dd>90+</dd></div>
+        <div><dt>Client satisfaction</dt><dd>99%</dd></div>
+      </dl>
+      <ClientProfiles />
+      <h3 className="service-support-title">Support for your next chapter</h3>
       <div
         className="reviews-grid"
         id="reviews-slider"
@@ -141,24 +149,7 @@ export default function Reviews() {
           >
             {active + 1} / {serviceHighlights.length}
           </span>
-          <button
-            type="button"
-            aria-label="Previous service highlight"
-            aria-controls="reviews-slider"
-            disabled={active === 0}
-            onClick={() => goTo(active - 1)}
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label="Next service highlight"
-            aria-controls="reviews-slider"
-            disabled={active === serviceHighlights.length - 1}
-            onClick={() => goTo(active + 1)}
-          >
-            →
-          </button>
+
         </div>
       </div>
     </section>

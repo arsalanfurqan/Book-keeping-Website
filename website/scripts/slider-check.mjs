@@ -39,7 +39,7 @@ try {
     );
     await sleep(300);
     await page.eval(() =>
-      document.querySelector('[aria-label="Next service highlight"]').click(),
+      document.querySelector('[aria-label="Show service highlight 2"]').click(),
     );
     await waitForSlide(1);
     assert.equal(
@@ -62,9 +62,7 @@ try {
         overflow: document.documentElement.scrollWidth > innerWidth,
         hidden: document.querySelectorAll('.review-card[aria-hidden="true"]')
           .length,
-        disabled: document.querySelector(
-          '[aria-label="Next service highlight"]',
-        ).disabled,
+        arrows: document.querySelectorAll('.reviews-arrows button').length,
         minTarget: Math.min(
           ...[...document.querySelectorAll(".reviews-controls button")].map(
             (b) => b.getBoundingClientRect().width,
@@ -75,14 +73,14 @@ try {
     assert.equal(info.count, "3 / 3");
     assert.equal(info.overflow, false);
     assert.equal(info.hidden, 2);
-    assert.equal(info.disabled, true);
+    assert.equal(info.arrows, 0);
     assert.ok(info.minTarget >= 44);
     assert.ok(Math.abs(info.height - info.cardHeight) < 2);
 
     await page.eval(() => document.querySelector('.franchise-section').scrollIntoView({ behavior: 'instant' }));
     const feature = await page.eval(() => {
       const section = document.querySelector('.franchise-section');
-      return { outside: !section.closest('.reviews-grid'), names: section.textContent.includes('Sarah Crow') && section.textContent.includes('Won Lee'), image: section.querySelector('img').naturalWidth, overflow: document.documentElement.scrollWidth > innerWidth };
+      return { outside: !section.closest('.reviews-grid'), names: document.querySelector('.reviews-section').textContent.includes('Sarah Crow') && document.querySelector('.reviews-section').textContent.includes('Won Lee'), image: section.querySelector('img').naturalWidth, overflow: document.documentElement.scrollWidth > innerWidth };
     });
     assert.equal(feature.outside, true);
     assert.equal(feature.names, true);

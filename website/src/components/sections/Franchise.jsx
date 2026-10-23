@@ -1,7 +1,7 @@
 import React from "react";
 import { franchiseHighlight } from "../../data/serviceHighlights.js";
 import Button from "../ui/Button.jsx";
-import RatingPreview from "../ui/RatingPreview.jsx";
+
 
 export default function Franchise() {
   return (
@@ -14,21 +14,6 @@ export default function Franchise() {
         <div className="franchise-copy">
           <h2 id="franchise-title">Your store.<br />Our attention to detail.</h2>
           <p>{franchiseHighlight.description}</p>
-          <h3 className="franchise-clients-title">Meet two of our top clients</h3>
-          <p>Sarah Crow and Won Lee are among the franchise clients we support. We also work with other independently owned franchise businesses, with bookkeeping support shaped around each business.</p>
-          <ul className="franchise-businesses" aria-label="Franchise business details">
-            {franchiseHighlight.businesses.map((business) => (
-              <li key={business.business}>
-                <RatingPreview />
-                <img className="client-portrait" src={business.image} alt={business.name} width="96" height="96" loading="lazy" />
-                <span>
-                  <strong>{business.name}</strong>
-                  <span>{business.business}</span>
-                  <small className="business-location">{business.location}, USA</small>
-                </span>
-              </li>
-            ))}
-          </ul>
           <Button to="/book-consultation">Discuss your store’s bookkeeping</Button>
         </div>
       </div>
