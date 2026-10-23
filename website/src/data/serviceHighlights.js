@@ -17,7 +17,9 @@ export const serviceHighlights = [
       "Build a consistent process for payroll records, input preparation and pay-cycle reviews, with support tailored to your location and agreed scope.",
     profile: "For professional services teams",
   },
-  {
+ ];
+
+export const franchiseHighlight = {
     service: "Franchise bookkeeping",
     image: "/images/ups-store.png",
     imageCaption: "Focused on your books. So you can focus on your store.",
@@ -36,5 +38,4 @@ export const serviceHighlights = [
         location: "California",
       },
     ],
-  },
-];
+};

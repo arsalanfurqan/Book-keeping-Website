@@ -101,50 +101,8 @@ export default function Reviews() {
             <div className="review-card-top">
               <h3 className="review-service">{review.service}</h3>
             </div>
-            <div
-              className={
-                review.image ? "review-body franchise-story" : "review-body"
-              }
-            >
-              {review.image && (
-                <div className="franchise-photo">
-                  <img
-                    src={review.image}
-                    alt="The UPS Store storefront"
-                    width="468"
-                    height="444"
-                    loading="lazy"
-                  />
-                  <p>{review.imageCaption}</p>
-                </div>
-              )}
-              <div>
-                <p className="review-text">{review.description}</p>
-                {review.businesses && (
-                  <ul
-                    className="franchise-businesses"
-                    aria-label="Franchise business details"
-                  >
-                    {review.businesses.map((business) => (
-                      <li key={business.business}>
-                        <span className="review-avatar" aria-hidden="true">
-                          {business.name
-                            .split(" ")
-                            .map((name) => name[0])
-                            .join("")}
-                        </span>
-                        <span>
-                          <strong>{business.name}</strong>
-                          <span>{business.business}</span>
-                          <small className="business-location">
-                            {business.location}, USA
-                          </small>
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+            <div className="review-body">
+              <p className="review-text">{review.description}</p>
             </div>
             <figcaption>
               <span>

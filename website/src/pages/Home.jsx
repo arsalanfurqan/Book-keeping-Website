@@ -9,6 +9,7 @@ import Finder from "../components/sections/Finder.jsx";
 import Process from "../components/sections/Process.jsx";
 import IndustryGrid from "../components/industries/IndustryGrid.jsx";
 import Hero from "../components/sections/Hero.jsx";
+import Franchise from "../components/sections/Franchise.jsx";
 import Reviews from "../components/sections/Reviews.jsx";
 
 function Home() {
@@ -56,6 +57,7 @@ function Home() {
         </div>
         <IndustryGrid />
       </section>
+      <Franchise />
       <section className="section payroll-band">
         <div>
           <h2 className="reveal">

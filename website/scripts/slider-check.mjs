@@ -19,7 +19,7 @@ try {
         const track = document.querySelector(".reviews-grid");
         return (
           document.querySelector(".reviews-count").textContent ===
-            `${index + 1} / 4` &&
+            `${index + 1} / 3` &&
           Math.abs(track.scrollLeft - index * (track.clientWidth + 24)) < 2
         );
       }, index);
@@ -31,16 +31,13 @@ try {
   for (const width of [1440, 820, 390, 320]) {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`http://127.0.0.1:${server.address().port}/`);
+    await page.eval(async () => { document.querySelector('.franchise-section').scrollIntoView({ behavior: 'instant' }); await document.querySelector('.franchise-photo img').decode(); });
     await page.eval(() =>
       document
         .querySelector(".reviews-section")
         .scrollIntoView({ behavior: "instant" }),
     );
     await sleep(300);
-    const firstHeight = await page.eval(
-      () =>
-        document.querySelector(".reviews-grid").getBoundingClientRect().height,
-    );
     await page.eval(() =>
       document.querySelector('[aria-label="Next service highlight"]').click(),
     );
@@ -49,18 +46,18 @@ try {
       await page.eval(
         () => document.querySelector(".reviews-count").textContent,
       ),
-      "2 / 4",
+      "2 / 3",
     );
     await page.eval(() =>
-      document.querySelector('[aria-label="Show service highlight 4"]').click(),
+      document.querySelector('[aria-label="Show service highlight 3"]').click(),
     );
-    await waitForSlide(3);
+    await waitForSlide(2);
     const info = await page.eval(async () => {
       await document.querySelector(".franchise-photo img").decode();
       const track = document.querySelector(".reviews-grid");
       return {
         height: track.getBoundingClientRect().height,
-        cardHeight: track.children[3].getBoundingClientRect().height,
+        cardHeight: track.children[2].getBoundingClientRect().height,
         count: document.querySelector(".reviews-count").textContent,
         overflow: document.documentElement.scrollWidth > innerWidth,
         hidden: document.querySelectorAll('.review-card[aria-hidden="true"]')
@@ -75,17 +72,24 @@ try {
         ),
       };
     });
-    assert.equal(info.count, "4 / 4");
+    assert.equal(info.count, "3 / 3");
     assert.equal(info.overflow, false);
-    assert.equal(info.hidden, 3);
+    assert.equal(info.hidden, 2);
     assert.equal(info.disabled, true);
     assert.ok(info.minTarget >= 44);
     assert.ok(Math.abs(info.height - info.cardHeight) < 2);
-    assert.ok(
-      info.height > firstHeight + 30,
-      "Short slides should not inherit the photo slide height",
-    );
+
+    await page.eval(() => document.querySelector('.franchise-section').scrollIntoView({ behavior: 'instant' }));
+    const feature = await page.eval(() => {
+      const section = document.querySelector('.franchise-section');
+      return { outside: !section.closest('.reviews-grid'), names: section.textContent.includes('Sarah Crow') && section.textContent.includes('Won Lee'), image: section.querySelector('img').naturalWidth, overflow: document.documentElement.scrollWidth > innerWidth };
+    });
+    assert.equal(feature.outside, true);
+    assert.equal(feature.names, true);
+    assert.equal(feature.image, 468);
+    assert.equal(feature.overflow, false);
     await page.screenshot({ path: `.qa/final-franchise-${width}.jpg` });
+    await page.eval(() => document.querySelector('.reviews-section').scrollIntoView({ behavior: 'instant' }));
     await page.eval(() =>
       document.querySelector(".reviews-grid").focus({ preventScroll: true }),
     );
@@ -106,7 +110,7 @@ try {
       await page.eval(
         () => document.querySelector(".reviews-count").textContent,
       ),
-      "1 / 4",
+      "1 / 3",
     );
     await page.screenshot({ path: `.qa/final-slider-${width}.jpg` });
     console.log(
@@ -117,18 +121,18 @@ try {
     features: [{ name: "prefers-reduced-motion", value: "reduce" }],
   });
   await page.eval(() =>
-    document.querySelector('[aria-label="Show service highlight 4"]').click(),
+    document.querySelector('[aria-label="Show service highlight 3"]').click(),
   );
   await sleep(150);
   assert.equal(
     await page.eval(() => document.querySelector(".reviews-count").textContent),
-    "4 / 4",
+    "3 / 3",
   );
   await page.setViewport({ width: 1440, height: 1000 });
   await sleep(300);
   assert.equal(
     await page.eval(() => document.querySelector(".reviews-count").textContent),
-    "4 / 4",
+    "3 / 3",
   );
   assert.deepEqual(page.consoleErrors, []);
   console.log(
